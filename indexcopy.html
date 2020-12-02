@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Homepage YUH</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8" />
+
+    <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
+
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+
+    <!--
+
+      Include the main three.js script.
+
+      The global variable THREE will be
+      available for use in any scripts
+      loaded after this one.
+
+    -->
+
+    <script src="three.js-dev/build/three.js"></script>
+    <script src="three.js-dev/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="three.js-dev/examples/js/controls/OrbitControls.js"></script>
+    <script src="three.js-dev/examples/js/libs/stats.min.js"></script>
+    <script src="three.js-dev/examples/js/libs/dat.gui.min.js"></script>
+    <script src="three.js-dev/examples/js/geometries/DecalGeometry.js"></script>
+    <script src="three.js-dev/build/three.module.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <h1 class="title"><a href="https://discoverthreejs.com/">Discoverthreejs.com</a> - Ch 1.1 Your First Scene</h1>
+
+    <div id="scene-container">
+      <!-- This div will hold our scene-->
+    </div>
+
+
+    <!--
+      Finally, include the script that
+      runs your three.js app.
+    -->
+
+    <script type="module" src="js/facesplat.js"></script>
+
+  </body>
+
+</html>
