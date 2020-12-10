@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-  new Crate({
-    server: '784273291308564501', // Mindspace
-    channel: '786416856076386355' // #stranded-at-home
-  })
-</script>
 		<title>three.js webgl - decal splatter</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -16,10 +10,11 @@
 
 		<div id="container"></div>
 		<div id="info">
+			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - decal splatter<br/>
+			click to shoot
 		</div>
 
 		<script type="module">
-
 
 			import * as THREE from './three.js-dev/build/three.module.js';
 
@@ -49,27 +44,19 @@
 			const decalDiffuse = textureLoader.load( './three.js-dev/examples/textures/decal/decal-diffuse.png' );
 			const decalNormal = textureLoader.load( './three.js-dev/examples/textures/decal/decal-normal.jpg' );
 
-				const myTexture = textureLoader.load('textures/zoom.jpg');
-
 			const decalMaterial = new THREE.MeshPhongMaterial( {
-				// specular: 0x444444,
-				// map: decalDiffuse,
-				// normalMap: decalNormal,
-				// normalScale: new THREE.Vector2( 1, 1 ),
-				// shininess: 30,
-				// transparent: true,
-				// depthTest: true,
-				// depthWrite: false,
-				// polygonOffset: true,
-				// polygonOffsetFactor: - 4,
-				// wireframe: false,
-
-				map: myTexture
-
-
+				specular: 0x444444,
+				map: decalDiffuse,
+				normalMap: decalNormal,
+				normalScale: new THREE.Vector2( 1, 1 ),
+				shininess: 30,
+				transparent: true,
+				depthTest: true,
+				depthWrite: false,
+				polygonOffset: true,
+				polygonOffsetFactor: - 4,
+				wireframe: false
 			} );
-
-
 
 			const decals = [];
 			let mouseHelper;
@@ -236,8 +223,7 @@
 					mesh = gltf.scene.children[ 0 ];
 					mesh.material = new THREE.MeshPhongMaterial( {
 						specular: 0x111111,
-						map: textureLoader.load( 'textures/zoom.jpg' ),
-						// map: textureLoader.load( './three.js-dev/examples/models/gltf/LeePerrySmith/Map-COL.jpg' ),
+						map: textureLoader.load( './three.js-dev/examples/models/gltf/LeePerrySmith/Map-COL.jpg' ),
 						specularMap: textureLoader.load( './three.js-dev/examples/models/gltf/LeePerrySmith/Map-SPEC.jpg' ),
 						normalMap: textureLoader.load( './three.js-dev/examples/models/gltf/LeePerrySmith/Infinite-Level_02_Tangent_SmoothUV.jpg' ),
 						shininess: 25
